@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Font Control</title>
+</head>
+<body>
+
+    <p id="myText" style="border: 5px solid black; padding: 10px;">
+        This is some dummy paragraph text used to test color and border changes.
+    </p>
+
+    <label>Text Color (RGB, e.g. 255,0,0):</label>
+    <input type="text" id="textColorInput"><br><br>
+
+    <label>Border Color (RGB, e.g. 0,255,0):</label>
+    <input type="text" id="borderColorInput"><br><br>
+
+    <label>Border Width (px):</label>
+    <input type="text" id="borderWidthInput"><br><br>
+
+    <button onclick="updateStyle()">Apply</button>
+
+    <script>
+        function updateStyle() {
+            var textColor = document.getElementById("textColorInput").value;
+            var borderColor = document.getElementById("borderColorInput").value;
+            var borderWidth = document.getElementById("borderWidthInput").value;
+
+            var para = document.getElementById("myText");
+            para.style.color = "rgb(" + textColor + ")";
+            para.style.borderColor = "rgb(" + borderColor + ")";
+            para.style.borderWidth = borderWidth + "px";
+        }
+    </script>
+
+</body>
+</html>
